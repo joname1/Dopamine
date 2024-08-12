@@ -313,14 +313,6 @@
                     [removeJailbreakSpecifier setProperty:@"DOButtonCell" forKey:@"headerCellClass"];
                     [removeJailbreakSpecifier setProperty:@"trash" forKey:@"image"];
                     [removeJailbreakSpecifier setProperty:@"removeJailbreakPressed" forKey:@"action"];
-                    if (hideJailbreakButtonShown) {
-                        if (envManager.isJailbroken) {
-                            [removeJailbreakSpecifier setProperty:DOLocalizedString(@"Hint_Hide_Jailbreak_Jailbroken") forKey:@"footerText"];
-                        }
-                        else {
-                            [removeJailbreakSpecifier setProperty:DOLocalizedString(@"Hint_Hide_Jailbreak") forKey:@"footerText"];
-                        }
-                    }
                     [specifiers addObject:removeJailbreakSpecifier];
                 }
             }
@@ -329,16 +321,7 @@
         PSSpecifier *themingGroupSpecifier = [PSSpecifier emptyGroupSpecifier];
         themingGroupSpecifier.name = DOLocalizedString(@"Section_Customization");
         [specifiers addObject:themingGroupSpecifier];
-        
-        PSSpecifier *themeSpecifier = [PSSpecifier preferenceSpecifierNamed:DOLocalizedString(@"Theme") target:self set:defSetter get:defGetter detail:nil cell:PSLinkListCell edit:nil];
-        themeSpecifier.detailControllerClass = [DOPSListItemsController class];
-        [themeSpecifier setProperty:@YES forKey:@"enabled"];
-        [themeSpecifier setProperty:@"theme" forKey:@"key"];
-        [themeSpecifier setProperty:[[self themeIdentifiers] firstObject] forKey:@"default"];
-        [themeSpecifier setProperty:@"themeIdentifiers" forKey:@"valuesDataSource"];
-        [themeSpecifier setProperty:@"themeNames" forKey:@"titlesDataSource"];
-        [specifiers addObject:themeSpecifier];
-        
+               
         if (envManager.isJailbroken) {
             PSSpecifier *mountSpecifier = [PSSpecifier emptyGroupSpecifier];
             mountSpecifier.target = self;
