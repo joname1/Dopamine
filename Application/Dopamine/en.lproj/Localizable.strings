@@ -1,4 +1,4 @@
-"Credits_Made_By" = "by opa334, ElleKit by évelyne";
+"Credits_Made_By" = "by opa334";
 
 // Log
 "Status_Title_Jailbreaking" = "Jailbreaking";
@@ -113,3 +113,11 @@
 "Status_Title_Select_Package_Managers" = "Select Package Manager(s)";
 "Select_Package_Managers_Install_Message" = "If you are unsure which one to select, select Sileo";
 "Continue" = "Continue";
+
+// mount 
+"Input_Mmount_Title" = "Mount";
+"Input_Unmount_Title" = "Unmount";
+"Input_Mount_Title" = "input orig path";
+"Button_Mount" = "Set";
+
+"System_Uptime_Format" = "Uptime: %ddays %dh %dm %ds";
